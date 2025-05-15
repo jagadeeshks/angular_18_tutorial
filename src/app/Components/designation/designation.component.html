@@ -1,4 +1,20 @@
 <div class="row">
+  @if(isLoader)
+  {
+    <div class="col-12">
+      <div class="spinner-border text-muted"></div>
+<div class="spinner-border text-primary"></div>
+<div class="spinner-border text-success"></div>
+<div class="spinner-border text-info"></div>
+<div class="spinner-border text-warning"></div>
+<div class="spinner-border text-danger"></div>
+<div class="spinner-border text-secondary"></div>
+<div class="spinner-border text-dark"></div>
+<div class="spinner-border text-light"></div>
+    </div>
+  }
+  @else
+  {
     @for(item of designationList;track $index)
     {
         <div class="col-3"> 
@@ -12,5 +28,8 @@
               </div>
         </div>
     }
+  }
+    
+  
     
 </div>

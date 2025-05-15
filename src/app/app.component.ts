@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { MasterComponent } from './Components/master/master.component';
+import { RouterModule } from '@angular/router';
+import { routes } from './app.routes';
 
 
 @Component({
