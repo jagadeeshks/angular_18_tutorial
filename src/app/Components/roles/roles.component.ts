@@ -14,6 +14,7 @@ import { MasterService } from '../../services/master.service';
   standalone:true
 })
 export class RolesComponent implements OnInit{
+  isLoader:boolean=true;
   http=inject(HttpClient);  
   rolesList: IRole [] =[]
   masterService = inject(MasterService);
@@ -21,7 +22,12 @@ export class RolesComponent implements OnInit{
   ngOnInit(): void {
     this.masterService.getRoles().subscribe((result:ApiResponseModel)=>{
       this.rolesList=result.data;
-    },error=>{alert("Roles Api error")});
+      this.isLoader=false;
+    },error=>{
+      alert("Roles Api error")
+      this.isLoader=false;
+
+    });
         
   }
 }
