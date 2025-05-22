@@ -16,15 +16,19 @@ export class ClientService {
 
    getAllCients():Observable<ApiResponseModel>
     {
-      return this.http.get<ApiResponseModel>(environment.API_URL+"GetAllDesignation")
+      //https://freeapi.miniprojectideas.com/api/clientstrive/GetallDesignation
+      // return this.http.get<ApiResponseModel>(environment.API_URL+"GetAllDesignation")
+      return this.http.get<ApiResponseModel>("/api/clientstrive/GetallClients")
     }
 
     addUpdate(obj:Client):Observable<ApiResponseModel>{
-      return this.http.post<ApiResponseModel>(environment.API_URL+"GetAllDesignation",obj)
+      //return this.http.post<ApiResponseModel>(environment.API_URL+"GetAllDesignation",obj)
+      return this.http.post<ApiResponseModel>("/api/clientstrive/AddUpdateClient",obj)
     }
 
     DeleteClientById(id:number):Observable<ApiResponseModel>
     {
-      return this.http.get<ApiResponseModel>(environment.API_URL+"DeleteClientByClientId?clientId="+id)
+      //return this.http.get<ApiResponseModel>(environment.API_URL+"DeleteClientByClientId?clientId="+id)
+      return this.http.delete<ApiResponseModel>("/api/clientstrive/DeleteClientByClientId?clientId="+id)
     }
 }
