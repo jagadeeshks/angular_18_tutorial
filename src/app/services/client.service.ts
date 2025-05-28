@@ -31,4 +31,9 @@ export class ClientService {
       //return this.http.get<ApiResponseModel>(environment.API_URL+"DeleteClientByClientId?clientId="+id)
       return this.http.delete<ApiResponseModel>("/api/clientstrive/DeleteClientByClientId?clientId="+id)
     }
+
+    getEmployeesList():Observable<ApiResponseModel>
+    {
+      return this.http.get<ApiResponseModel>("/api/clientstrive/GetallEmployee")
+    }
 }
