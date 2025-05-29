@@ -36,4 +36,9 @@ export class ClientService {
     {
       return this.http.get<ApiResponseModel>("/api/clientstrive/GetallEmployee")
     }
+
+    addClientProjectUpdate(obj:Client):Observable<ApiResponseModel>{
+      
+      return this.http.post<ApiResponseModel>("/api/clientstrive/AddUpdateClientProject",obj)
+    }
 }
