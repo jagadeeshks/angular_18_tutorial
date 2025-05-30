@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { ClientService } from '../../services/client.service';
 import { ApiResponseModel } from '../../model/interface/role';
 import { UpperCasePipe } from '@angular/common';
+import { ClientProjectType } from '../../model/class/ClientProject';
 
 @Component({
   selector: 'app-client',

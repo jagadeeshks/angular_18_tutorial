@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { Client } from '../model/class/Client';
 import { environment } from '../../environments/environment.development';
 import { ApiResponseModel } from '../model/interface/role';
+import { ClientProjectType } from '../model/class/ClientProject';
 
 @Injectable({
   providedIn: 'root'
@@ -41,4 +42,11 @@ export class ClientService {
       
       return this.http.post<ApiResponseModel>("/api/clientstrive/AddUpdateClientProject",obj)
     }
+
+    getAllClientProjects():Observable<ApiResponseModel>
+    {
+        return this.http.get<ApiResponseModel>("/api/clientstrive/GetallClientProjects")
+    }
+
+
 }

@@ -3,9 +3,11 @@ import { ReactiveFormsModule, FormControl, FormGroup, Validators } from '@angula
 import { ClientService } from '../../services/client.service';
 import { ApiResponseModel, Employee } from '../../model/interface/role';
 import { Client } from '../../model/class/Client';
+import { ClientProjectType } from '../../model/class/ClientProject';
+import { DatePipe } from '@angular/common';
 @Component({
   selector: 'app-client-project',
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule,DatePipe],
   templateUrl: './client-project.component.html',
   styleUrl: './client-project.component.css',
 })
@@ -29,10 +31,12 @@ export class ClientProjectComponent implements OnInit {
   clientservice = inject(ClientService);
   employeeList: Employee[] = [];
   clientList: Client[] = [];
+   ClientProjectList:ClientProjectType[]=[];
 
   ngOnInit(): void {
     this.getAllClient();
     this.getAllEmployees();
+    this.getAllClientProjects();
   }
 
   getAllEmployees() {
@@ -44,6 +48,13 @@ export class ClientProjectComponent implements OnInit {
   getAllClient() {
     this.clientservice.getAllCients().subscribe((res: ApiResponseModel) => {
       this.clientList = res.data;
+    });
+  }
+
+  getAllClientProjects()
+  {
+    this.clientservice.getAllClientProjects().subscribe((res:ApiResponseModel)=>{
+      this.ClientProjectList=res.data;
     });
   }
 

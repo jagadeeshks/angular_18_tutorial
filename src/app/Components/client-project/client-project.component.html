@@ -11,28 +11,25 @@
                             <thead>
                                 <tr>
                                     <th>Sr No</th>
-                                    <th>Company Name</th>
-                                    <th>Person Name</th>
-                                    <th>Contact No</th>
-                                    <th>City</th>
-                                    <th>Action</th>
+                                    <th>Employee Name</th>
+                                    <th>Project Name</th>
+                                    <th>Client Name</th>
+                                    <th>Start Date</th>
+                                    <th>End Date</th>
                                 </tr>
                             </thead>
-                            <tbody>
-                                <!-- @for(item of clientList;track $index)
+                            <tbody>                                
+                                @for(item of ClientProjectList;track $index)
                                 {
-                                <tr>
-                                    <td>{{$index+1}}</td>
-                                    <td>{{item.companyName}}</td>
-                                    <td>{{item.contactPersonName}}</td>
-                                    <td>{{item.contactNo}}</td>
-                                    <td>{{item.city}}</td>
-                                    <td>
-                                        <button class="btn btn-primary" >Edit</button>
-                                        <button class="btn btn-danger" >Delete</button>
-                                    </td>
-                                </tr>
-                                } -->
+                                    <tr>
+                                        <td>{{$index+1}}</td>
+                                        <td>{{item.empName}}</td>
+                                        <td>{{item.projectName}}</td>
+                                        <td>{{item.clientName}}</td>
+                                        <td>{{item.startDate | date:'dd-MM-yyyy'}}</td>
+                                        <td>{{item.expectedEndDate | date:'dd-MM-yyyy'}}</td>
+                                    </tr>
+                                }
 
                             </tbody>
                         </table>
